@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مملكة كينج 👑</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="Styles/Style.css">
+  <title> king kingdom </title>
 </head>
-<body>
-    
+<body> 
+
+    <div class="intro">
+        <h1 class="intro-logo-header">
+            <span class="intro-logo King">king</span> <span class="intro-logo">kingdom</span>
+        </h1>
+    </div>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()"><ion-icon name="sunny-outline"></ion-icon></button>
+
+    <div id="content">
+        <div class="top-section">
+        <h3 class="text">Welcome to</h3>
+        <div class="image-circle">
+            <img src="Images/Logo.jpg" alt="Kingdom Picture">
+        </div>
+        <h3 class="text"><span>King</span> kingdom</h3>
+        </div>
+
+        <div class="buttons">
+            <a href="Pages/Rules.html" class="button">Rules</a>
+            <a class="button">Store</a>
+            <a class="button">Members</a>
+            <a class="button">Blog</a>
+            <a class="button">Contact Us</a>
+        </div>
+    </div>
+
+    <script src="Scripts/Script.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
