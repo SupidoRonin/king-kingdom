@@ -1,60 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="../Styles/Rules.css"">
-  <title>King Kindom | Rules</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../Styles/Rules.css">
+  <title>مملكة كينغ 👑 | القوانين</title>
 </head>
-<body> 
-  <div class="intro">
-    <h1 class="intro-logo-header">
-      <span class="intro-logo King">Rules</span>
-    </h1>
-  </div>
-
-  <div class="content">
-    <h2>Tabs</h2>
-    <p>Click on the buttons inside the tabbed menu:</p>
-
-    <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-      <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+<body dir="rtl">
+    <div class="intro">
+        <h1 class="intro-logo-header">
+            <span class="intro-logo King">القوانين</span>
+        </h1>
     </div>
 
-    <div id="London" class="tabcontent">
-      <h3>London</h3>
-      <p>London is the capital city of England.</p>
+    <button class="toggle-btn" onclick="toggleDarkMode()"><ion-icon name="sunny-outline"></ion-icon></button>
+
+    <div class="wrapper">
+        <div class="vline"></div>
+
+        <div class="column">
+            <h2>القوانين</h2>
+            <p>      1- ممنوع الشتائم نهائيا و نحترم عاضاء المملكة. 
+                <br> 2- لا يسمح بالسبام. 
+                <br> 3- السمبنة على الجنس الاخر و التحدث الى اليه في الخاص, و اذا تم الشكوى منك سيتم طردك من الكون. 
+                <br> 4- ممنوع ارسال صورة لك أو احد اخر و حتى الملصقات. 
+                <br> 5- لا تطلب من أحد أن يسجلك في جهازه لاكن يمكنك أن تسأله اذا سجلك. 
+                <br> 6- لا تتحدث عن أي مجتمع اخر او حدث. 
+                <br> 7- ممنوع التسويق لأي شيء في المملكة. 
+                <br> 8- الى كل شخص انذارين اذا انتهوا سيتم طردك تأديبي و اذا تكرر سيتم طردك مؤبد. 
+                <br> 9- ممنوع حرق اي انمي أو مانجا أو مانها أو مانهوا. 
+                <br> 10- ممنوع استعمال أدوات الذكاء الأصطناعي مثل ميتا أو البوتات. 
+                <br> 11- ممنوع التحدث عن السياسة. 
+            </p>
+        </div>
+
+        <div class="vline"></div>
+        <hr>
+
+        <div class="column">
+            <h2>الأنذارات</h2>
+            <p>     1- ممنوع ارسال ملصقات الكيبوب أو ملصقات مخلة بالأداب 
+               <br> 2- ثلاث ملصقات بدون رسائل = سبام.
+               <br> 3- 9 رسائل متتالية منها 3 بدون فائدة = سبام.
+               <br> 4- السبام و التشفير.
+               <br> 5- التحدث عن الهينتاي أو الأيتشي.
+               <br> 6- العنصرية بكل أشكالها. 
+               <br> 7- التحدث عن الأمور السياسية و غيرها. 
+               <br> 8- منع استخدام أي لهجة غير العامية أو اللغة العربية في العموم. 
+               <br> 9- التحدث عن حلقة لم يمر عليها 7 ساعات. 
+               <br> 10- التنمر على الاعضاء. 
+               <br> 11- تسجيل الصوتيات للبنات. 
+               <br> 12- الصوتيات العالية و المزعجة و التي بلا فائدة. 
+               <br> 13- ارسال مقطع خارج الانمي في يوم غير مفتوح. 
+               <br> 14- الحذف(أي تعمد فعل الخطأ و حذفه). 
+               <br> 15- طلب ترقية او منصب و ازعاج المسؤلين. 
+
+            </p>
+        </div>
+
+        <div class="vline"></div>
+        <hr>
+
+        <div class="column">
+            <h2>قوانين الطرد</h2>
+            <p><span>الطرد المؤبد:-</span>
+                <br> 1- الحرق بجيع صوره. 
+                <br> 2- النشر لمجموعة اخرى. 
+                <br> 3- ارسال أي صور أو مقاطع أو ملصق للهينتاي. 
+                <br> 4- الدخول بنية التخريب أو سرقة الأعضاء. 
+                <br> 5- تهديد الأعضاء بالباند وغيرها. 
+                <br> 6- السب و الشتم. 
+                <br> 7- ارسال اكثر من ملصق دفعة واحدة بنفس الوقت. 
+                <br> 8- ارسال صورة لك أو لشخص أخر. 
+                <br> 9- افتعال المشاكل المتعدمة داخل المملكة.
+                <br> 10- ازعاج شخص في الخاص أو ابتزازه و اشتكى منك. 
+                <br> 11- ارسال صورة أو مقطع أو ملصق غير لائق سواء كان من الانمي أو غيره. 
+                <br><br><span>الطرد المؤقت :-</span>
+                <br> 1- الاحتكاك الغير لائق بين الجنسين في الخاص أو في العام. 
+                <br> 2- الاعتراض على قرارات المشرفين و التدخل فيها. 
+                <br><br><span>ملاحظة:</span>
+                <br>اذا حصلت على انذارين سيتم تحويلك الى الطرد المؤبد 
+            </p>
+        </div>
+
+        <div class="vline"></div>
+        <hr>
     </div>
 
-    <div id="Paris" class="tabcontent">
-      <h3>Paris</h3>
-      <p>Paris is the capital of France.</p> 
-    </div>
+    <a href="../Main.html" class="button">الرجوع</a>
 
-    <div id="Tokyo" class="tabcontent">
-      <h3>Tokyo</h3>
-      <p>Tokyo is the capital of Japan.</p>
-    </div>
-  </div>
+    <script src="../Scripts/Script.js"></script>
 
-  <script src="../Scripts/Script.js"></script>
-
-  <script>
-    function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-  </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

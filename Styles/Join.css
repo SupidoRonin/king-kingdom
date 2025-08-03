@@ -47,17 +47,19 @@ span{
     color: var(--main-color);
 }
 
-hr{
-    display: none;
+h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--main-color);
 }
 
-h2 {
+p {
+    font-size: 16px;
+    color: #222;
     margin-bottom: 20px;
-    border-bottom: 2px var(--main-color) solid;
-    /* box-shadow: 0 0 25px var(--main-color); */
-    box-shadow: 0 0 25px var(--main-color);
-    border-radius: 20px;
+    color: var(--main-color);
 }
+
 
 /* Splash Screen */
 .intro{
@@ -102,8 +104,8 @@ h2 {
 /* Color Mode Button Switch */
 .toggle-btn {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 20px;
+    right: 20px;
     padding: 10px 20px;
     cursor: pointer;
     color: var(--main-color);
@@ -113,47 +115,61 @@ h2 {
     border: none;
 }
 
-/* Hero Section */
-.wrapper {
+.card-container {
     display: flex;
-    align-items: stretch;
-    width: 90%;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
     max-width: 1200px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    width: 100%;
 }
 
-.vline {
-    border: 3px var(--main-color) solid;
-    box-shadow: 0 0 25px var(--main-color);
-    border-radius: 50px;
-}
-
-.column {
-    flex: 1;
+.card {
+    width: 100%;
+    max-width: 280px;
+    padding: 30px 20px;
+    border-radius: 25px;
     text-align: center;
-    padding: 40px 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 2px var(--main-color) solid;
+    box-shadow: 0 0 25px var(--main-color);
+    transition: 0.5s ease;
+    flex: 1 1 calc(33.33% - 60px);
 }
 
-.button {
-    width: 160px;
-    height: 55px;
-    margin-bottom: 30px;
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-image {
+    width: 100px;
+    height: 100px;
+    background-color: var(--second-bg-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 16px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--second-bg-color);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
     border: 3px var(--main-color) solid;
     color: var(--font-color);
     border-radius: 50px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 25px var(--main-color);
     transition: 0.3s ease;
 }
 
-.button:hover {
+.card-button:hover {
     background-color: var(--main-color);
     color: var(--bg-color);
     transform: scale(1.1);
@@ -163,44 +179,24 @@ h2 {
                 0 0 100px var(--main-color);
 }
 
-/* Responsive for smaller screens */
+@media (max-width: 992px) {
+    .card-container{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+
 @media (max-width: 768px) {
-    .wrapper {
-        flex-direction: column;
-        align-items: center;
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
     }
 
-    .vline {
-        display: none;
+    .card {
+        flex: 1 1 100%;
     }
-
-    hr{
-        display: block;
-        border: 3px var(--main-color) solid;
-        box-shadow: 0 0 25px var(--main-color);
-        width: 80%;
-        border-radius: 50px;
-    }
-
-    .column {
-        width: 100%;
-    }
-
-    .column:last-of-type {
-        border-bottom: none;
-    }
-}
-/* Scroll Bar */
-::-webkit-scrollbar{
-    width: 10px;
-    display: none;
-}
-
-::-webkit-scrollbar-thumb{
-    background-color: var(--main-color);
-    border-radius: 16px;
-}
-
-::-webkit-scrollbar-track{
-    background-color: var(--second-bg-color);
 }

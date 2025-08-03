@@ -1,5 +1,7 @@
+/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* Website Colors Variables */
 :root{
     /* Dark Mode */
     --bg-color: #222831;
@@ -18,6 +20,7 @@
     --main-color: #E5C745;
 }
 
+/* All Website Elements */
 * {
     user-select: none;
     text-decoration: none;
@@ -27,6 +30,7 @@
     font-family: "Cairo", sans-serif;
 }
 
+/* Document Content */
 body {
     background-color: var(--bg-color);
     color: var(--font-color);
@@ -57,7 +61,7 @@ span{
 
 .intro-logo-header{
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     color: var(--font-color);
@@ -83,6 +87,7 @@ span{
     transition: ease-in-out 0.5s;
 }
 
+/* Color Mode Button Switch */
 .toggle-btn {
     position: absolute;
     top: 20px;
@@ -96,6 +101,8 @@ span{
     border: none;
 }
 
+/* Hero Section */
+
 .top-section {
     display: flex;
     align-items: center;
@@ -105,12 +112,14 @@ span{
     margin-bottom: 60px;
 }
 
+/* Hero Section Text */
 .text {
     font-size: 1.6rem;
     font-weight: 700;
 }
 
-.image-circle {
+/* Website Image */
+.image-logo {
     width: 220px;
     height: 220px;
     background-color: var(--main-color);
@@ -124,19 +133,20 @@ span{
     animation: updown 1.7s infinite;
 }
 
-.image-circle:hover{
+.image-logo:hover{
     box-shadow: 0 0 25px var(--main-color),
                 0 0 50px var(--main-color),
                 0 0 100px var(--main-color);
 }
 
-.image-circle img {
+.image-logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.buttons {
+/* Hero Section Buttons */
+.buttons-container {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
@@ -170,6 +180,9 @@ span{
                 0 0 100px var(--main-color);
 }
 
+/* Animations */
+
+/* Appear bounce animation */
 @keyframes appear{
     from{
         overflow: hidden;
@@ -183,6 +196,7 @@ span{
     }
 }
 
+/* Slide left animation */ 
 @keyframes left{
     from{
         transform: translateX(-1000%);
@@ -194,6 +208,7 @@ span{
     }
 }
 
+/* Slide right animation */ 
 @keyframes right{
     from{
         transform: translateX(1000%);
@@ -205,6 +220,7 @@ span{
     }
 }
 
+/* Infinite bounce animation */ 
 @keyframes updown{
     0%{
         transform: translateY(0);
@@ -217,12 +233,16 @@ span{
     }
 }
 
-@media (max-width: 668px) {
+/* Responsive */
+
+/* Mobile */
+@media (max-width: 520px) {
   .text-box, .button {
     width: 90%;
   }
 
   .top-section {
+    margin-top: 30px;
     flex-direction: column;
     gap: 30px;
   }
@@ -232,13 +252,37 @@ span{
     height: 180px;
   }
 
+  .buttons-container{
+    margin-bottom: 30px;
+  }
+
   .button {
     width: 60%;
   }
 }
 
-/* Scroll Bar */
+/* Tablet */
+@media (max-width: 768px) {
+    .top-section{
+        gap: 20px;
+    }
 
+    .text {
+        font-size: 1rem;
+    }
+
+    .image-logo{
+        width: 160px;
+        height: 160px;
+    }
+
+    .buttons-container{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* Scroll Bar */
 ::-webkit-scrollbar{
     width: 10px;
     display: none;
