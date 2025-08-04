@@ -64,7 +64,7 @@ p {
 /* Splash Screen */
 .intro{
     position: fixed;
-    z-index: 1;
+    z-index: 111;
     left: 0;
     top: 0;
     width: 100%;
@@ -101,94 +101,88 @@ p {
     transition: ease-in-out 0.5s;
 }
 
-/* Color Mode Button Switch */
-.toggle-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    color: var(--main-color);
-    font-size: 1.7rem;
-    font-weight: 900;
-    background: none;
-    border: none;
-}
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     max-width: 1200px;
-    width: 100%;
-}
-
-.card {
-    width: 100%;
-    max-width: 280px;
-    padding: 30px 20px;
-    border-radius: 25px;
-    text-align: center;
-    border: 2px var(--main-color) solid;
+    margin: auto;
     box-shadow: 0 0 25px var(--main-color);
-    transition: 0.5s ease;
-    flex: 1 1 calc(33.33% - 60px);
+    border-radius: 50px;
 }
 
-.card:hover {
-    transform: scale(1.1);
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    touch-action: pan-y;
 }
 
-.card-image {
-    width: 100px;
-    height: 100px;
+.team-member {
     background-color: var(--second-bg-color);
-    color: white;
+    flex: 0 0 100%;
+    padding-bottom: 40px;
+}
+
+.team-image {
+    background: var(--main-color);
+    padding: 20px;
+}
+
+.team-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+}
+
+.team-name {
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--font-color);
+}
+
+.team-role {
+    color: var(--second-font-color);
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 30px;
+    height: 2px;
+    background: var(--main-color);
+    margin: 0 auto 10px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-color);
+    color: var(--font-color);
+    font-size: 30px;
+    border: none;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px;
-    font-size: 16px;
+    z-index: 10;
 }
 
-.card-image img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.arrow.left {
+    left: 10px;
 }
 
-.card-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--second-bg-color);
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 14px;
-    border: 3px var(--main-color) solid;
-    color: var(--font-color);
-    border-radius: 50px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 25px var(--main-color);
-    transition: 0.3s ease;
-}
-
-.card-button:hover {
-    background-color: var(--main-color);
-    color: var(--bg-color);
-    transform: scale(1.1);
-
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color),
-                0 0 100px var(--main-color);
+.arrow.right {
+    right: 10px;
 }
 
 .button {
     width: 160px;
     height: 55px;
-    margin-top: 40px;
+    margin-bottom: 40px;
     border: 3px var(--main-color) solid;
     color: var(--font-color);
     border-radius: 50px;
@@ -211,30 +205,9 @@ p {
                 0 0 100px var(--main-color);
 }
 
-@media (max-width: 992px) {
-    .card-container{
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    .card {
-        flex: 1 1 calc(50% - 40px);
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        align-items: flex-start;
-        padding-top: 40px;
-    }
-
-    .button{
-        margin: 0 auto;
-        margin-bottom: 30px;
-    }
-
-    .card {
-        flex: 1 1 100%;
+@media (min-width: 768px) {
+    .team-member {
+    flex: 0 0 33.3333%;
     }
 }
 

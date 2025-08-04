@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Website Icon -->
+  <link rel="icon" href="../Images/King.jpg">
+  <!-- Website Style -->
+  <link rel="stylesheet" href="../Styles/Members.css">
+  <title>مملكة كينغ 👑 | الأعضاء</title>
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div class="intro">
+    <h1 class="intro-logo-header">
+      <span class="intro-logo King">الأعضاء</span>
+    </h1>
+  </div>
+
+  <!-- Members Section Content -->
+  <div class="carousel-container" id="carousel">
+    <!-- Arrows -->
+    <button class="arrow left" onclick="moveSlide(-1)">‹</button>
+    <button class="arrow right" onclick="moveSlide(1)">›</button>
+
+    <!-- Section Track -->
+    <div class="carousel-track" id="carouselTrack">   
+            
+      <!-- Member 1 -->
+      <div class="team-member">
+        <!-- Member Image -->
+        <div class="team-image">
+          <img src="../Images/Sakura.jpg" alt="Robert" />
+        </div>
+        <!-- Member Name -->
+        <div class="team-name">هاروكا ساكورا</div>
+        <!-- Member Role -->
+        <div class="team-role">مؤسس المملكة</div>
+        <!-- Card Underline -->
+        <div class="underline"></div>
+      </div>
+      
+      <!-- Member 2 -->
+      <div class="team-member">
+        <!-- Member Image -->
+        <div class="team-image">
+          <img src="../Images/Eren.jpg" alt="Robert" />
+        </div>
+        <!-- Member Name -->
+        <div class="team-name">ايرين ييغر</div>
+        <!-- Member Role -->
+        <div class="team-role">نائب مؤسس أول</div>
+        <!-- Card Underline -->
+        <div class="underline"></div>
+      </div>
+      
+      <!-- Member 3 -->
+      <div class="team-member">
+        <!-- Member Image -->
+        <div class="team-image">
+          <img src="../Images/Gojo.jpg" alt="Robert" />
+        </div>
+        <!-- Member Name -->
+        <div class="team-name">غوجو ساتورو</div>
+        <!-- Member Role -->
+        <div class="team-role">نائب مؤسس ثاني</div>
+        <!-- Card Underline -->
+        <div class="underline"></div>
+      </div>
+      
+      <!-- Member 4 -->
+      <div class="team-member">
+        <!-- Member Image -->
+        <div class="team-image">
+          <img src="../Images/Goku.jpg" alt="Robert" />
+        </div>
+        <!-- Member Name -->
+        <div class="team-name">سون غوكو</div>
+        <!-- Member Role -->
+        <div class="team-role">ليدر نقابة دراجون</div>
+        <!-- Card Underline -->
+        <div class="underline"></div>
+      </div>
+      
+      <!-- Member 5 -->
+      <div class="team-member">
+        <!-- Member Image -->
+        <div class="team-image">
+          <img src="../Images/Luffy.jpg" alt="Robert" />
+        </div>
+        <!-- Member Name -->
+        <div class="team-name">مونكي د. لوفي</div>
+        <!-- Member Role -->
+        <div class="team-role">نائب ليدر نقابة دراجون</div>
+        <!-- Card Underline -->
+        <div class="underline"></div>
+      </div>
+      
+      <!-- Member 6 -->
+      <div class="team-member">
+        <!-- Member Image -->
+        <div class="team-image">
+          <img src="../Images/Musashi.jpg" alt="Robert" />
+        </div>
+        <!-- Member Name -->
+        <div class="team-name">موساشي مياموتو</div>
+        <!-- Member Role -->
+        <div class="team-role">ليدر الفروع</div>
+        <!-- Card Underline -->
+        <div class="underline"></div>
+      </div>
+      
+      <!-- Member 7 -->
+      <div class="team-member">
+        <!-- Member Image -->
+        <div class="team-image">
+          <img src="../Images/Fang.jpg" alt="Robert" />
+        </div>
+        <!-- Member Name -->
+        <div class="team-name">فانغ</div>
+        <!-- Member Role -->
+        <div class="team-role">ليدر نقابة ستون</div>
+        <!-- Card Underline -->
+        <div class="underline"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Return Button -->
+  <a href="../Main.html" class="button">الرجوع</a>
+
+  <!-- Javascript -->
+  <script src="../Scripts/Script.js"></script>
+
+  <!-- Ionicons Usage -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    let currentIndex = 0;
+    const track = document.getElementById("carouselTrack");
+    const carousel = document.getElementById("carousel");
+    const totalItems = track.children.length;
+
+    function getItemsPerSlide() {
+      return window.innerWidth >= 768 ? 3 : 1;
+    }
+
+    function moveSlide(direction) {
+      const itemsPerSlide = getItemsPerSlide();
+      const maxIndex = Math.ceil(totalItems / itemsPerSlide) - 1;
+
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = maxIndex;
+      if (currentIndex > maxIndex) currentIndex = 0;
+
+      const slideWidth = carousel.offsetWidth;
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    window.addEventListener('resize', () => {
+      moveSlide(0); // re-adjust on resize
+    });
+
+    // Touch support
+    let startX = 0;
+    let endX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+      endX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener('touchend', () => {
+      const diff = startX - endX;
+      const threshold = 50;
+      if (diff > threshold) moveSlide(1);
+      else if (diff < -threshold) moveSlide(-1);
+    });
+  </script>
+
+</body>
+</html>

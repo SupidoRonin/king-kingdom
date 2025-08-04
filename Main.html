@@ -3,40 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Website Icon -->
+  <link rel="icon" href="Images/King.jpg">
+  <!-- Website Style -->
   <link rel="stylesheet" href="Styles/Style.css">
   <title>مملكة كينج 👑</title>
 </head>
 <body dir="rtl">
 
+    <!-- Splash Screen -->
     <div class="intro">
         <h1 class="intro-logo-header">
             <span class="intro-logo King">مملكة</span> <span class="intro-logo">كينج</span>
         </h1>
     </div>
 
+    <!-- Mode Switch Button -->
     <button class="toggle-btn" onclick="toggleDarkMode()"><ion-icon name="sunny-outline"></ion-icon></button>
 
+    <!-- Web Page Content -->
     <div id="content">
+        <!-- Hero Section -->
         <div class="top-section">
+            <!-- Hero Section Heading -->
             <h3 class="text">مرحبا بك في</h3>
+
+            <!-- Hero Section Image -->
             <div class="image-logo">
-                <img src="Images/Logo.jpg" alt="Kingdom Picture">
+                <img src="Images/King.jpg" alt="Kingdom Picture">
             </div>
+
+            <!-- Hero Section Heading -->
             <h3 class="text">مملكة <span> كينج</span></h3>
         </div>
 
+        <!-- Hero Section Buttons -->
         <div class="buttons-container">
             <a href="Pages/Join.html" class="button">انضم لنا</a>
             <a href="Pages/Rules.html" class="button">القوانين</a>
-            <a href="" class="button">المتجر</a>
-            <a href="" class="button">الصحيفة</a>
-            <a href="" class="button">الأخبار</a>
-            <a href="" class="button">تواصل معنا</a>
+            <a href="Pages/Members.html" class="button">الأعضاء</a>
+            <a class="button">قريبا</a>
+            <a href="Pages/About.html" class="button">عنا</a>
         </div>
     </div>
 
+    <!-- Javascript -->
     <script src="Scripts/Script.js"></script>
 
+    <!-- Ionicons Usage -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
