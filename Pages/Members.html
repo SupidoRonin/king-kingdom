@@ -147,21 +147,33 @@
       return window.innerWidth >= 768 ? 3 : 1;
     }
 
-    function moveSlide(direction) {
-      const itemsPerSlide = getItemsPerSlide();
-      const maxIndex = Math.ceil(totalItems / itemsPerSlide) - 1;
+    function getItemsPerSlide() {
+      return window.innerWidth >= 768 ? 3 : 1;
+    }
 
+    function getSlideWidth() {
+      return carousel.offsetWidth / getItemsPerSlide();
+    }
+
+
+    function moveSlide(direction) {
+      const maxIndex = totalItems - getItemsPerSlide();
       currentIndex += direction;
+
       if (currentIndex < 0) currentIndex = maxIndex;
       if (currentIndex > maxIndex) currentIndex = 0;
 
-      const slideWidth = carousel.offsetWidth;
+      const slideWidth = getSlideWidth();
       track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
+
+    // Resize support
     window.addEventListener('resize', () => {
-      moveSlide(0); // re-adjust on resize
+      const slideWidth = getSlideWidth();
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     });
+
 
     // Touch support
     let startX = 0;
@@ -178,9 +190,30 @@
     carousel.addEventListener('touchend', () => {
       const diff = startX - endX;
       const threshold = 50;
+
       if (diff > threshold) moveSlide(1);
       else if (diff < -threshold) moveSlide(-1);
     });
+
+    // Autoplay every 5 seconds
+    let autoplayInterval;
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(() => {
+        moveSlide(1);
+      }, 3000);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    startAutoplay();
+    carousel.addEventListener("mouseenter", stopAutoplay);
+    carousel.addEventListener("mouseleave", startAutoplay);
+
+
+
   </script>
 
 </body>
