@@ -152,12 +152,13 @@
     }
 
     function getSlideWidth() {
-      return carousel.offsetWidth / getItemsPerSlide();
+      return track.querySelector('.team-member').getBoundingClientRect().width;
     }
 
 
+
     function moveSlide(direction) {
-      const maxIndex = totalItems - getItemsPerSlide();
+      const maxIndex = totalItems - 1;
       currentIndex += direction;
 
       if (currentIndex < 0) currentIndex = maxIndex;
@@ -168,12 +169,12 @@
     }
 
 
+
     // Resize support
     window.addEventListener('resize', () => {
       const slideWidth = getSlideWidth();
       track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     });
-
 
     // Touch support
     let startX = 0;
@@ -201,7 +202,7 @@
     function startAutoplay() {
       autoplayInterval = setInterval(() => {
         moveSlide(1);
-      }, 3000);
+      }, 5000);
     }
 
     function stopAutoplay() {

@@ -211,6 +211,12 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+    .arrow.left, .arrow.right{
+        display: none;
+    }
+}
+
 /* Scroll Bar */
 ::-webkit-scrollbar{
     width: 10px;
