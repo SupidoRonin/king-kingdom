@@ -1,0 +1,232 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Website Colors Variables */
+:root {
+  --bg-color: #222831;
+  --second-bg-color: #2D3138;
+  --font-color: #f7fafc;
+  --second-font-color: #e2e8f0;
+  --main-color: #FFDE4D;
+}
+
+/* Light Mode */
+.light {
+  --bg-color: #f7fafc;
+  --second-bg-color: #e2e8f0;
+  --font-color: #5D5D5D;
+  --second-font-color: #2D3138;
+  --main-color: #E5C745;
+}
+
+/* Global Reset */
+* {
+  user-select: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  transition: background-color 0.1s ease-in-out;
+  padding: 20px;
+}
+
+span {
+  color: var(--main-color);
+}
+
+h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--main-color);
+}
+
+p {
+  font-size: 18px;
+  color: var(--main-color);
+  margin-bottom: 24px;
+}
+
+a {
+  color: var(--main-color);
+}
+
+/* Splash Screen */
+.intro {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+  transition: 1s;
+}
+
+.intro-logo-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--font-color);
+  transition: 1s;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 1.7rem;
+}
+
+.intro-logo {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.intro-logo.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.intro-logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+/* Login Box */
+.login-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 520px;
+  max-width: 100%;
+  padding: 40px;
+  height: auto;
+}
+
+.login-header {
+  text-align: center;
+  margin: 25px 0 45px 0;
+}
+
+.login-header header {
+  color: var(--font-color);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.input-box input {
+  width: 100%;
+  height: 70px;
+  font-size: 20px;
+  padding: 0 25px;
+  margin-bottom: 20px;
+  border-radius: 35px;
+  border: none;
+  background: none;
+  color: var(--main-color);
+  border: 1px var(--main-color) solid;
+  box-shadow: 0 0 25px var(--main-color);
+  outline: none;
+  transition: 0.3s ease;
+}
+
+::placeholder {
+  font-weight: 500;
+  color: var(--second-font-color);
+}
+
+input:focus {
+  transform: scale(1.05);
+}
+
+.submit-button {
+  width: 100%;
+  height: 70px;
+  background: var(--main-color);
+  box-shadow: 0 0 25px var(--main-color);
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-box {
+    width: 95%;
+    padding: 30px;
+  }
+
+  .login-header header {
+    font-size: 32px;
+  }
+
+  .input-box input,
+  .submit-button {
+    height: 65px;
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 20px;
+  }
+
+  .intro-logo-header {
+    font-size: 24px;
+  }
+
+  .login-header header {
+    font-size: 28px;
+  }
+
+  .input-box input,
+  .submit-button {
+    font-size: 16px;
+    height: 60px;
+  }
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--second-bg-color);
+}

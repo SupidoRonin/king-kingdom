@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../Images/King.jpg">
+  <title>مملكة كينغ 👑 | الأخبار</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="main.js" defer></script>
+</head>
+<body dir="rtl">
+  <!-- Splash Screen -->
+    <div class="intro">
+        <h1 class="intro-logo-header">
+            <span class="intro-logo King">الأخبار</span>
+        </h1>
+    </div>
+
+  <div id="adminPanel" class="admin-panel hidden">
+    <h2>أنشر خبر</h2>
+    <form id="newsForm">
+      <input type="text" id="newsTitle" placeholder="العنوان" required />
+      <input type="text" id="newsContent" placeholder="الموضوع" required />
+      <input type="url" id="newsImage" placeholder="رابط الصورة" required />
+      <button id="submit" type="submit">أنشر خبر</button>
+    </form>
+  </div>
+
+  <div class="top-bar">
+    <button id="logoutBtn" class="hidden">تسجيل خروج</button>
+    <a href="auth.html" id="loginLink"><div class="login"><ion-icon name="person-sharp"></ion-icon></div></a>
+  </div>
+
+  <input class="search" type="text" id="searchInput" placeholder="البحث عن خبر..." />
+
+  <div id="newsGrid" class="news-grid"></div>
+
+  <script src="../Scripts/Script.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
