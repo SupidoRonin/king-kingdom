@@ -1,9 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import {
-  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut
 } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
-// ✅ Firebase config (use your actual Firebase config here)
+// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCZyRLn4_lGtbXinkRiMxgJRCzLg4jsu9k",
   authDomain: "king-kingdom.firebaseapp.com",
@@ -14,31 +16,38 @@ const firebaseConfig = {
   measurementId: "G-KRV6JZYQBW"
 };
 
-// ✅ Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// ✅ Get the form
-const form = document.getElementById("authForm");
+// Only allow admin login
+const ADMIN_EMAILS = [
+  "mohamadanime012@gmail.com",
+  "abanobh53@gmail.com",
+  "admin3@example.com"
+];
 
-form.addEventListener("submit", async (e) => {
+// login submit
+document.getElementById("authForm").addEventListener("submit", async e => {
   e.preventDefault();
 
-  // ✅ Fix: Use correct IDs from HTML
-  const email = document.getElementById("login-email").value;
-  const password = document.getElementById("login-password").value;
+  const emailInput = document.getElementById("login-email");
+  const passwordInput = document.getElementById("login-password");
 
+  const email = emailInput.value.trim();
+  const password = passwordInput.value;
+
+  // Only allow login if email is in the admin list
+  if (!ADMIN_EMAILS.includes(email)) {
+    alert("فقط المشرفين الذين يمكنهم تسجيل الدخول.");
+    return;
+  }
+
+  // See if there any errors in login
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    // ✅ Redirect if login successful
     window.location.href = "index.html";
-  } catch (err) {
-    // Optional: Try to register instead
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      window.location.href = "index.html";
-    } catch (registerErr) {
-      alert("Login failed: " + registerErr.message);
-    }
+  } catch (error) {
+    console.error("فشل التسجيل:", error.message);
+    alert("خطأ في البريد أو كلمة المرور الخاصة بك.");
   }
 });

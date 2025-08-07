@@ -239,6 +239,32 @@ p {
     outline: none;
 }
 
+.button {
+    width: 160px;
+    height: 55px;
+    margin-top: 40px;
+    border: 3px var(--main-color) solid;
+    color: var(--font-color);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px var(--main-color);
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    transform: scale(1.1);
+
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+
 /* Responsive Rules */
 @media (max-width: 1024px) {
     .admin-panel {
@@ -261,6 +287,10 @@ p {
     #newsTitle {
         width: 100%;
         margin-right: 0;
+    }
+
+    #submit{
+      margin-top: 10px;
     }
 
     .search {
