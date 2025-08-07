@@ -86,7 +86,8 @@ function renderNews(data) {
 
     if (currentUser && currentUser.uid === news.uid) {
       const delBtn = document.createElement("button");
-      delBtn.textContent = "Delete";
+      delBtn.textContent = "حذف";
+      delBtn.style = "background-color: #ff4d4f;color: white;border: none;padding: 6px 12px;border-radius: 6px;cursor: pointer;font-size: 14px;transition: background-color 0.3s ease;float: right; /* or position it with flex/grid */margin-top: 10px;"
       delBtn.onclick = async () => {
         await deleteDoc(doc(db, "news", id));
       };
